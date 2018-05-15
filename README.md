@@ -8,11 +8,17 @@ We need to install two Packages to Configure SSL for Apache VirtualHost i.e.
 2. mod_ssl
 
 yum -y install openssl mod_ssl
+
 openssl genrsa -out elinuxbook.key 2048
+
 openssl req -new -key elinuxbook.key -out elinuxbook.csr
+
 openssl x509 -req -days 1095 -in elinuxbook.csr -signkey elinuxbook.key -out elinuxbook.crt
+
 cp elinuxbook.crt /etc/pki/httpd -t
+
 /etc/init.d/httpd start
+
 We need to install two Packages to Configure SSL for Apache VirtualHost i.e.
 
 1. openssl
